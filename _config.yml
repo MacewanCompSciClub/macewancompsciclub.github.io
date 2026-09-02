@@ -1,10 +1,10 @@
 permalink: /:year:month:day/:title
-url: #Your url here
+url: https://macewancompsciclub.github.io
 baseurl: /project
 
 # variables
-name: Your Site Name
-description: Your description here
+name: MaCS
+description: MacEwan University Computer Science Club
 google_verification: null
 
 
