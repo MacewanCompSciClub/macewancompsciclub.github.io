@@ -18,8 +18,8 @@ theme: # leave it empty
 # social
 author: MacEwan Computer Science Club
 image: /thumbnail-jumbo.png
-twitter:
-  username: lorepirri
+instagram:
+  username: macewancs
 
 plugins:
   - jekyll-target-blank
