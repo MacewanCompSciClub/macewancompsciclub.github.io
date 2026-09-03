@@ -8,6 +8,6 @@
 layout: home
 ---
 
-## The MacEwan University Computer Science Club.
+## MaCS
 
 Welcome to our webpage! This website is currently under construction.
