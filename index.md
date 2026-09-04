@@ -8,6 +8,4 @@
 layout: home
 ---
 
-## MaCS
-
-Welcome to our webpage! This website is currently under construction.
+This website is currently under construction.
