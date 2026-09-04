@@ -66,7 +66,9 @@
         
         <section class="page-header">
             <img src="/logo-bg.png" class="header-img">
+            {% if page.layout != 'home' %}
             <h1 class="project-name">{{ page-title }}</h1>
+            {% endif %}
             <h2 class="project-tagline">{{ page-tagline }}</h2>
             {% if page.layout == 'home' and site.github.is_project_page %}
             <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
