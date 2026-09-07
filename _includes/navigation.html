@@ -1,0 +1,12 @@
+<header class="site-header">
+  <a href="{{ '/' | relative_url }}" class="logo">
+	<img src="{{ '/assets/MaCS_Logo_Classic.svg' | relative_url }}" alt="MaCS Logo">
+  </a>
+	<nav class="site-nav">
+	  <a href="/" {% if page.url == "/" %} class="active" {% endif %}>						   Main()</a>
+	  <a href="/events.html" {% if page.url == "/events.html" %}   class="active" {% endif %}> Events</a>
+	  <a href="/about.html" {% if page.url == "/about.html" %}     class="active" {% endif %}> About</a>
+	  <a href="/contact.html" {% if page.url == "/contact.html" %} class="active" {% endif %}> Contact</a>
+	</nav>
+</header>
+

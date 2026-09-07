@@ -1,0 +1,62 @@
+@charset "UTF-8";
+:root {
+  --color-bg: #111111;
+  --color-text: #ffffff;
+  --color-accent: #0000ff; /* placeholder — swap for your accent */
+  --font-mono: "JetBrains Mono", monospace;
+  --space-unit: 8px;
+}
+
+.logo img {
+  height: 64px; /* adjust to your actual logo size */
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--space-unit) * 3) calc(var(--space-unit) * 4);
+}
+
+.site-nav {
+  display: flex;
+  gap: calc(var(--space-unit) * 8);
+}
+
+h1 {
+  color: var(--color-text);
+}
+
+body {
+  background: var(--color-bg);
+}
+
+.site-nav a.active::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: white;
+}
+
+.site-nav a {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 20pt;
+  color: #8C8C8C;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.site-nav a.active {
+  color: white;
+}
+
+.site-nav a:not(.active):hover {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */
