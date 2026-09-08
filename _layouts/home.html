@@ -6,9 +6,9 @@ layout: default
 
   {{ content }}
 
-  <h2>Latest News</h2>
-
   <div>&nbsp;</div>
+
+  <h2>Upcoming Events</h2>
 
   <ul class="event-list">
     {% for event in site.events %}
@@ -26,6 +26,8 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+
+  <h2>Latest News</h2>
 
   <ul class="post-list">
     {% for post in site.posts %}
