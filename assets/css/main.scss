@@ -6,6 +6,7 @@
   --color-accent: #0000ff; /* placeholder — swap for your accent */
   --font-mono: "JetBrains Mono", monospace;
   --space-unit: 8px;
+  --color-orange: #F88344;
 }
 
 .logo img {
@@ -16,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: calc(var(--space-unit) * 3) calc(var(--space-unit) * 4);
+  padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 4);
 }
 
 .site-nav {
@@ -57,4 +58,77 @@ body {
 
 .site-nav a:not(.active):hover {
   color: white;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space-unit) * 3);
+}
+
+.hero-logo {
+  max-width: 500px; /* adjust to your logo's actual proportions */
+  width: 80%;
+  height: auto;
+}
+
+.hero-date {
+  font-family: var(--font-mono);
+  font-size: 20pt;
+  color: var(--color-text);
+  margin-top: calc(var(--space-unit) * -10);
+}
+
+.btn-primary {
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-mono);
+  color: white;
+  background: #1F1F1F;
+  border: 1px solid #515151;
+  font-size: 20pt;
+  font-weight: bold;
+  text-decoration: none;
+  padding: calc(var(--space-unit) * 1.5) calc(var(--space-unit) * 10);
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.btn-primary:hover {
+  color: black;
+  background-color: var(--color-orange);
+}
+
+.corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #515151;
+}
+
+.corner-tl { top: -3px; left: -3px; }
+.corner-tr { top: -3px; right: -3px; }
+.corner-bl { bottom: -3px; left: -3px; }
+.corner-br { bottom: -3px; right: -3px; }
+
+.arrow-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow-line {
+  width: 3px;
+  height: 40px; /* adjust length */
+  background: var(--color-text); /* or whatever color you want */
+}
+
+.arrow-tip {
+  width: 11px;
+  height: 11px;
+  background: var(--color-text);
+  transform: rotate(45deg);
+  margin-top: -4px; /* pulls it flush against the line, half its own size */
 }
