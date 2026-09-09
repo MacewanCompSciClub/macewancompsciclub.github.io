@@ -1,0 +1,11 @@
+<div class="framed-image" style="width: {{ include.width }}; height: {{ include.height }};">
+  <span class="corner corner-tl"></span>
+  <span class="corner corner-tr"></span>
+  <span class="corner corner-bl"></span>
+  <span class="corner corner-br"></span>
+
+  <span class="framed-image-label">{{ include.label }}</span>
+  <div class="framed-image-crop">
+	<img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" style="object-position: {{ include.position | default: 'center center' }};">
+  </div>
+</div>

@@ -146,6 +146,82 @@ body {
   stroke: #F88344;
   transition: stroke 150ms ease;
 }
+
 .btn-primary:hover .btn-border-rect {
   stroke: var(--color-bg);
+}
+
+.framed-image {
+  position: relative;
+  display: block;
+  border: 1px solid white;
+  /* no overflow here anymore */
+}
+
+.framed-image-crop {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* cropping happens here instead */
+}
+
+.framed-image-crop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.framed-image .corner {
+  background: white;
+}
+
+.framed-image-label {
+  top: -18.5px;  /* adjust: pushes it above the top edge */
+  position: absolute;
+  left: 3px;
+  font-family: var(--font-mono);
+  font-size: 10pt;
+  font-weight: bold;
+  color: black;
+  background: var(--color-orange);
+  padding: 0px 3px;
+  z-index: 1;
+}
+.content-section {
+  padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
+  color: white;
+}
+
+.content-section h2 {
+  font-family: var(--font-mono);
+  font-size: 32pt;
+  margin-bottom: calc(var(--space-unit) * 0);
+  margin-top: 4px;
+}
+
+.content-section p {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+}
+.content-section--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: calc(var(--space-unit) * 4);
+}
+.content-section-text {
+  display: flex;
+  padding: 0px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .content-section--split {
+    grid-template-columns: 1fr;
+  }
+  .content-section-image {
+    order: -1; /* forces image above text on mobile, regardless of HTML source order */
+  }
 }

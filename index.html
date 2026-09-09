@@ -4,47 +4,54 @@ title: Main
 ---
 
 <section class="hero">
-  <img src="{{ '/assets/MaCS_Hacks_Logo.svg' | relative_url }}" alt="MaCS Hacks Logo" class="hero-logo">
-  <p class="hero-date">October 16-18</p>
-  <a href="#" class="btn btn-primary", id="registerBtn">
-	  <span class="corner corner-tl"></span>
-	  <span class="corner corner-tr"></span>
-	  <span class="corner corner-bl"></span>
-	  <span class="corner corner-br"></span>
-	 <svg class="btn-border">
-		<rect class="btn-border-rect" fill="none" stroke="#F88344" stroke-width="3"
-			  vector-effect="non-scaling-stroke">
-		  <animate attributeName="stroke-dashoffset" from="0" to="-520" dur="3s" repeatCount="indefinite"/>
-		</rect>
-	  </svg>
-	  REGISTER
-  </a>
+	<img src="{{ '/assets/MaCS_Hacks_Logo.svg' | relative_url }}" alt="MaCS Hacks Logo" class="hero-logo">
+	<p class="hero-date">October 16-18</p>
+	{% include border_button.html text="REGISTER" href="/register.html" %}
 	<div class="arrow-down">
 	  <span class="arrow-line"></span>
 	  <span class="arrow-tip"></span>
 	</div>
+	<section class="content-section content-section--split">
+	  <div class="content-section-text">
+		<h2>WHERE IS IT?</h2>
+		<p>
+		  The hackathon will take place in<br>
+		  <strong>The Lookout (SA–200)</strong>,<br>
+		  SAMU Building Floor 2.<br>
+		  10850 104 Ave, Edmonton AB.
+		</p>
+	  </div>
 
+	  <div class="content-section-image">
+		{% include framed_image.html src="/assets/samu_building.jpg" alt="meow" width="320px" height="160px" position="30% center" label="SAMU Building" %}
+	  </div>
+	</section>
 	<script>
-	  function fitBorderToButton() {
-		const btn = document.getElementById('registerBtn');
+	  function fitBorderToButton(btn) {
 		const svg = btn.querySelector('.btn-border');
 		const rect = btn.querySelector('.btn-border-rect');
 		const w = btn.offsetWidth;
 		const h = btn.offsetHeight;
+		const strokeWidth = 4;
+		const inset = strokeWidth / 2;
 
 		svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-		rect.setAttribute('x', 1.5);
-		rect.setAttribute('y', 1.5);
-		rect.setAttribute('width', w - 3);
-		rect.setAttribute('height', h - 3);
+		rect.setAttribute('x', inset);
+		rect.setAttribute('y', inset);
+		rect.setAttribute('width', w - strokeWidth);
+		rect.setAttribute('height', h - strokeWidth);
 
-		const perimeter = 2 * ((w - 3) + (h - 3));
+		const perimeter = 2 * ((w - strokeWidth) + (h - strokeWidth));
 		rect.setAttribute('pathLength', perimeter);
 		rect.setAttribute('stroke-dasharray', `30 ${(perimeter - 60) / 2} 30 ${(perimeter - 60) / 2}`);
-		document.querySelector('animate').setAttribute('to', -perimeter);
+		svg.querySelector('animate').setAttribute('to', -perimeter);
 	  }
 
-	  fitBorderToButton();
-	  window.addEventListener('resize', fitBorderToButton);
+	  function fitAllBorderButtons() {
+		document.querySelectorAll('.border-btn').forEach(fitBorderToButton);
+	  }
+
+	  fitAllBorderButtons();
+	  window.addEventListener('resize', fitAllBorderButtons);
 	</script>
 </section>

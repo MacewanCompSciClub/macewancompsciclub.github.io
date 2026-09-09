@@ -1,0 +1,12 @@
+<a href="{{ include.href | default: '#' }}" class="btn btn-primary border-btn">
+  <span class="corner corner-tl"></span>
+  <span class="corner corner-tr"></span>
+  <span class="corner corner-bl"></span>
+  <span class="corner corner-br"></span>
+  <svg class="btn-border">
+    <rect class="btn-border-rect" fill="none" stroke-width="4" vector-effect="non-scaling-stroke">
+      <animate attributeName="stroke-dashoffset" from="0" to="0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </svg>
+  {{ include.text | default: "BUTTON" }}
+</a>
