@@ -31,7 +31,7 @@
   <span class="corner corner-br"></span>
   <svg class="btn-border">
     <rect class="btn-border-rect" fill="none" stroke-width="4" vector-effect="non-scaling-stroke">
-      <animate attributeName="stroke-dashoffset" from="0" to="0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="0" dur="5s" repeatCount="indefinite"/>
     </rect>
   </svg>
   REGISTER
@@ -116,8 +116,9 @@
 		rect.setAttribute('height', h - strokeWidth);
 
 		const perimeter = 2 * ((w - strokeWidth) + (h - strokeWidth));
+		const dashLength = Math.min(50, perimeter / 6); // never more than ~1/6th of the total perimeter
 		rect.setAttribute('pathLength', perimeter);
-		rect.setAttribute('stroke-dasharray', `30 ${(perimeter - 60) / 2} 30 ${(perimeter - 60) / 2}`);
+		rect.setAttribute('stroke-dasharray', `${dashLength} ${(perimeter - dashLength * 2) / 2} ${dashLength} ${(perimeter - dashLength * 2) / 2}`);
 		svg.querySelector('animate').setAttribute('to', -perimeter);
 	  }
 

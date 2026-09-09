@@ -75,8 +75,9 @@ title: Main
 		rect.setAttribute('height', h - strokeWidth);
 
 		const perimeter = 2 * ((w - strokeWidth) + (h - strokeWidth));
+		const dashLength = Math.min(50, perimeter / 6); // never more than ~1/6th of the total perimeter
 		rect.setAttribute('pathLength', perimeter);
-		rect.setAttribute('stroke-dasharray', `30 ${(perimeter - 60) / 2} 30 ${(perimeter - 60) / 2}`);
+		rect.setAttribute('stroke-dasharray', `${dashLength} ${(perimeter - dashLength * 2) / 2} ${dashLength} ${(perimeter - dashLength * 2) / 2}`);
 		svg.querySelector('animate').setAttribute('to', -perimeter);
 	  }
 
