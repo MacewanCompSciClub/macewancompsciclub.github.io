@@ -6,10 +6,17 @@
   --font-mono: "JetBrains Mono", monospace;
   --space-unit: 8px;
   --color-orange: #F88344;
+  --color-grey: #515151;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .logo img {
-  height: 64px; /* adjust to your actual logo size */
+  height: 52px; /* adjust to your actual logo size */
 }
 
 .site-header {
@@ -217,17 +224,25 @@ body {
 }
 
 .page-container {
-  max-width: 1200px; /* the one shared cap for everything */
+  max-width: 1100px; /* the one shared cap for everything */
   margin-left: auto;
   margin-right: auto;
   padding: 0 calc(var(--space-unit) * 4); /* side breathing room on small screens */
+  padding-bottom: calc(var(--space-unit) * 4);
 }
 
 .content-section {
   padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
   color: white;
   max-width: 1200px; /* adjust to your Figma spec */
-  padding: calc(var(--space-unit) * 2) 0px;
+  padding: calc(var(--space-unit) * 4) 0px;
+}
+
+.content-section--light {
+  background: white;
+  color: black;
+  width: 100%;
+  max-width: none;
 }
 
 .content-section h2 {
@@ -270,6 +285,91 @@ body {
   .content-section-image {
     order: -1; /* forces image above text on mobile, regardless of HTML source order */
   }
+}
+.section-title {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 32pt;
+}
+
+.schedule {
+  color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  padding: calc(var(--space-unit) * 2);
+}
+
+.schedule:hover {
+  background-color: #F2F2F2;
+}
+
+.schedule-label {
+  background: var(--color-orange);
+  align-self: flex-start; /* opts OUT of stretching, so it stays hugging just its own text width */
+  margin: 0;
+  padding: 0 calc(var(--space-unit) * 1);
+}
+
+.schedule-table {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #515151;
+  font-family: var(--font-mono); /* or whatever font you want here */
+  background-color: white;
+  min-height: 220px;
+}
+
+.schedule-table .corner {
+  background: var(--color-grey);
+}
+
+.schedule-date {
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  padding: calc(var(--space-unit) * 2) 0;
+}
+
+.sched-table-title {
+  padding: 0;
+  margin: 0;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--color-grey);
+  color: #8B8B8B;
+  padding: 0.1em calc(var(--space-unit) * 1);
+}
+
+.sched-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 calc(var(--space-unit) * 1);
+}
+
+.sched-times {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-unit) * 1.5);
+  border-right: 1px solid var(--color-grey);
+  padding: calc(var(--space-unit) * 1); /* space between text and the line */
+  font-weight: 600;
+}
+
+.sched-activities {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-unit) * 1.5);
+  font-weight: 600;
+  padding: calc(var(--space-unit) * 1); /* space between text and the line */
+  padding-left: 0px;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: center; /* or space-between/space-around depending on desired spacing */
+  gap: calc(var(--space-unit) * 4);
+  flex-wrap: wrap; /* lets schedules stack on narrow screens instead of overflowing */
 }
 
 /*# sourceMappingURL=main.css.map */

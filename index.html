@@ -17,9 +17,9 @@ title: Main
 	  <div class="content-section-text">
 		<h2>WHERE IS IT?</h2>
 		<p>
-		  The hackathon will take place in
-		  <strong>The Lookout (SA–200)</strong>,<br>
-		  SAMU Building Floor 2.
+		The hackathon will take place at MacEwan University in
+		  <strong>The Lookout (SA–200)</strong>,
+		  SAMU Building Floor 2.<br>
 		  10850 104 Ave, Edmonton AB.
 		</p>
 	  </div>
@@ -37,7 +37,7 @@ title: Main
 	  <div class="content-section-text">
 		<h2>WHAT’S INVOLVED?</h2>
 		<p>
-		Join us for a 42 hour hackathon starting Friday October 16th.
+		Join us for a 42 hour hackathon starting at 5:30pm Friday October 16th.
 		Participants will be given a challenge to solve,
 		build solutions and present their work to judges. There will be food too!
 		</p>
@@ -59,6 +59,18 @@ title: Main
 	  </div>
 	</section>
 </div>
+<section class="content-section content-section--light">
+  <h2 class="section-title">SCHEDULE</h2>
+	<div class="schedule-row">
+	  {% for day in site.data.schedule %}
+		{% include schedule_card.html
+		   label=day.label
+		   date=day.date
+		   table_title=day.table_title
+		   events=day.events %}
+	  {% endfor %}
+	</div>
+</section>
 	<script>
 	  function fitBorderToButton(btn) {
 		const svg = btn.querySelector('.btn-border');

@@ -1,0 +1,24 @@
+<div class="schedule">
+	<p class="schedule-label">{{ include.label}}</p>
+	<h1 class="schedule-date">{{ include.date }}</h1>
+
+  <div class="schedule-table">
+  <span class="corner corner-tl"></span>
+  <span class="corner corner-tr"></span>
+  <span class="corner corner-bl"></span>
+  <span class="corner corner-br"></span>
+  <div class="sched-table-title">{{ include.table_title }}</div>
+	<div class="sched-list">
+	  <div class="sched-times">
+        {% for event in include.events %}
+          <span>{{ event.time }}</span>
+        {% endfor %}
+	  </div>
+	  <div class="sched-activities">
+        {% for event in include.events %}
+          <span>{{ event.activity }}</span>
+        {% endfor %}
+	  </div>
+	</div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="framed-image" style="width: {{ include.width }}; height: {{ include.height }};">
+<div class="framed-image" style="max-width: {{ include.width }}; aspect-ratio: {{ include.width | remove: 'px' }} / {{ include.height | remove: 'px' }};">
   <span class="corner corner-tl"></span>
   <span class="corner corner-tr"></span>
   <span class="corner corner-bl"></span>
