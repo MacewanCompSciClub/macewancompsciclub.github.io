@@ -13,10 +13,16 @@
 }
 
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* replaces width: 100% */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 4);
+  z-index: 10;
+  background: var(--color-bg);
 }
 
 .site-nav {
@@ -136,6 +142,13 @@ body {
   align-items: center;
 }
 
+.hero .arrow-down {
+  position: absolute;
+  bottom: calc(var(--space-unit) * 4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .arrow-line {
   width: 3px;
   height: 40px; /* adjust length */
@@ -203,16 +216,24 @@ body {
   z-index: 1;
 }
 
+.page-container {
+  max-width: 1200px; /* the one shared cap for everything */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 calc(var(--space-unit) * 4); /* side breathing room on small screens */
+}
+
 .content-section {
   padding: calc(var(--space-unit) * 6) calc(var(--space-unit) * 4);
   color: white;
+  max-width: 1200px; /* adjust to your Figma spec */
+  padding: calc(var(--space-unit) * 2) 0px;
 }
 
 .content-section h2 {
   font-family: var(--font-mono);
   font-size: 32pt;
-  margin-bottom: calc(var(--space-unit) * 0);
-  margin-top: 4px;
+  margin: 0 0;
 }
 
 .content-section p {
@@ -228,9 +249,16 @@ body {
   gap: calc(var(--space-unit) * 4);
 }
 
+.content-section-image {
+  justify-self: center; /* or start/end depending on desired alignment */
+  align-self: center;
+}
+
 .content-section-text {
   display: flex;
-  padding: 0px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 0;
   flex-direction: column;
   justify-content: center;
 }

@@ -11,21 +11,54 @@ title: Main
 	  <span class="arrow-line"></span>
 	  <span class="arrow-tip"></span>
 	</div>
+</section>
+<div class="page-container">
 	<section class="content-section content-section--split">
 	  <div class="content-section-text">
 		<h2>WHERE IS IT?</h2>
 		<p>
-		  The hackathon will take place in<br>
+		  The hackathon will take place in
 		  <strong>The Lookout (SA–200)</strong>,<br>
-		  SAMU Building Floor 2.<br>
+		  SAMU Building Floor 2.
 		  10850 104 Ave, Edmonton AB.
 		</p>
 	  </div>
-
 	  <div class="content-section-image">
-		{% include framed_image.html src="/assets/samu_building.jpg" alt="meow" width="320px" height="160px" position="30% center" label="SAMU Building" %}
+		  {% include framed_image.html src="/assets/samu_building.jpg" alt="meow" width="320px" height="160px" position="30% center" label="LOCATION.IMG" %}
 	  </div>
 	</section>
+
+	<div class="arrow-down">
+	  <span class="arrow-line"></span>
+	  <span class="arrow-tip"></span>
+	</div>
+
+	<section class="content-section">
+	  <div class="content-section-text">
+		<h2>WHAT’S INVOLVED?</h2>
+		<p>
+		Join us for a 42 hour hackathon starting Friday October 16th.
+		Participants will be given a challenge to solve,
+		build solutions and present their work to judges. There will be food too!
+		</p>
+	  </div>
+	</section>
+
+	<div class="arrow-down">
+	  <span class="arrow-line"></span>
+	  <span class="arrow-tip"></span>
+	</div>
+
+	<section class="content-section">
+	  <div class="content-section-text">
+		<h2>WHO CAN JOIN?</h2>
+		<p>
+		The event is free and open to all students of all skill levels.
+		We will have different challenges (and prizes) based on experience.
+		</p>
+	  </div>
+	</section>
+</div>
 	<script>
 	  function fitBorderToButton(btn) {
 		const svg = btn.querySelector('.btn-border');
@@ -54,4 +87,3 @@ title: Main
 	  fitAllBorderButtons();
 	  window.addEventListener('resize', fitAllBorderButtons);
 	</script>
-</section>
