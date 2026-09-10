@@ -72,10 +72,19 @@ title: Main
 	</div>
 </section>
 <section class="content-section content-section--light">
-  {% include faq_item.html
-   question="Do I need a team to register?"
-   answer="No, you can register solo and we'll help you find teammates at the event." %}
   <h2 class="section-title">FAQ</h2>
+  <div class="faq-list">
+    {% for item in site.data.faq %}
+      {% include faq_item.html question=item.question answer=item.answer %}
+    {% endfor %}
+  </div>
+
+<div class="contact-block">
+<p>
+  <b>more questions?</b><br>
+  Send them to: macewancs42@gmail.com or join the <a href="https://discord.gg/dCJrADTAjw" class="link-highlight">Discord</a>!
+</p>
+</div>
 </section>
 	<script>
 	  function fitBorderToButton(btn) {
@@ -105,9 +114,20 @@ title: Main
 
 	  fitAllBorderButtons();
 	  window.addEventListener('resize', fitAllBorderButtons);
+
 	  document.querySelectorAll('.faq-question').forEach(btn => {
 		btn.addEventListener('click', () => {
-		  btn.closest('.faq-item').classList.toggle('open');
+		  const item = btn.closest('.faq-item');
+		  const answer = item.querySelector('.faq-answer');
+		  const isOpen = item.classList.contains('open');
+
+		  if (isOpen) {
+			answer.style.maxHeight = '0px';
+			item.classList.remove('open');
+		  } else {
+			answer.style.maxHeight = answer.scrollHeight + 'px';
+			item.classList.add('open');
+		  }
 		});
 	  });
 	</script>

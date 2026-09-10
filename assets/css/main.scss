@@ -355,6 +355,8 @@ body {
 
 .faq-item {
   border-bottom: 1px solid black;
+  break-inside: avoid; /* prevents a single FAQ item from being split across the column break */
+  margin-bottom: calc(var(--space-unit) * 2);
 }
 
 .faq-question {
@@ -367,7 +369,7 @@ body {
   cursor: pointer;
   font-family: var(--font-mono);
   font-weight: bold;
-  font-size: var(--font-size-body);
+  font-size: 24pt;
   color: black;
   padding: calc(var(--space-unit) * 2) 0;
   text-align: left;
@@ -380,7 +382,7 @@ body {
 }
 
 .faq-item.open .faq-icon {
-  transform: rotate(180deg);
+  transform: rotate(135deg);
 }
 
 .faq-answer {
@@ -389,12 +391,31 @@ body {
   transition: max-height 300ms ease;
 }
 
-.faq-item.open .faq-answer {
-  max-height: 300px; /* generous cap — see note below */
-}
-
 .faq-answer p {
   padding-bottom: calc(var(--space-unit) * 2);
   color: black;
   font-family: var(--font-mono);
+  font-size: 12pt;
+}
+
+.faq-list {
+  columns: 2; /* CSS multi-column layout, not grid */
+  column-gap: calc(var(--space-unit) * 24);
+  margin: calc(var(--space-unit) * 2);
+  margin-bottom: calc(var(--space-unit) * 24);
+}
+.link-highlight {
+  color: var(--color-orange);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .faq-list {
+    columns: 1;
+  }
+}
+
+.contact-block {
+  display: flex;
+  justify-content: flex-end;
 }

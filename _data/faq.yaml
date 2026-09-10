@@ -1,11 +1,29 @@
 - question: "WHO CAN PARTICIPATE?"
   answer: "Any post-secondary education student interested in participating, regardless of skill or faculty is welcome to join."
 
+- question: "WHAT IF I DON'T HAVE A TEAM?"
+  answer: "We will provide time to make teams on the day and we also have a Discord channel where you can look for teammates!"
+
 - question: "SHOULD I ALREADY KNOW HOW TO PROGRAM?"
   answer: "Absolutely not, this event is not just for building but also an excuse to learn!"
 
 - question: "What should I bring?"
   answer: "Your laptop, charger, and any other devices you want to build with."
 
-- question: "Can beginners join?"
-  answer: "Yes! We'll have challenges and mentorship suited for all skill levels."
+- question: "What's the team size?"
+  answer: "You can have up to five people on your team."
+
+- question: "WHAT'S THE THEME?"
+  answer: "All will be revealed October 16th."
+
+- question: "CAN I USE AI?"
+  answer: "Yes."
+
+- question: "HOW DOES JUDGING WORK?"
+  answer: "Teams will get five minutes to present their work to the judges. The judging rubric will be released closer to the event start."
+
+- question: "CAN I PARTICIPATE ONLINE?"
+  answer: "You can! You will also be able to present remotely. You may miss out on the snacks though..."
+
+- question: "ANOTHER QUESTION"
+  answer: "Another answer"
