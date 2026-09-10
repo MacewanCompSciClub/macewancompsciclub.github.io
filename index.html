@@ -24,7 +24,7 @@ title: Main
 		</p>
 	  </div>
 	  <div class="content-section-image">
-		  {% include framed_image.html src="/assets/samu_building.jpg" alt="meow" width="320px" height="160px" position="30% center" label="LOCATION.IMG" %}
+		  {% include framed_image.html src="/assets/samu_building.jpg" alt="meow" width="320px" height="160px" position="40% center" label="LOCATION.IMG" %}
 	  </div>
 	</section>
 
@@ -71,6 +71,12 @@ title: Main
 	  {% endfor %}
 	</div>
 </section>
+<section class="content-section content-section--light">
+  {% include faq_item.html
+   question="Do I need a team to register?"
+   answer="No, you can register solo and we'll help you find teammates at the event." %}
+  <h2 class="section-title">FAQ</h2>
+</section>
 	<script>
 	  function fitBorderToButton(btn) {
 		const svg = btn.querySelector('.btn-border');
@@ -99,4 +105,9 @@ title: Main
 
 	  fitAllBorderButtons();
 	  window.addEventListener('resize', fitAllBorderButtons);
+	  document.querySelectorAll('.faq-question').forEach(btn => {
+		btn.addEventListener('click', () => {
+		  btn.closest('.faq-item').classList.toggle('open');
+		});
+	  });
 	</script>

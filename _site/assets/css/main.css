@@ -372,4 +372,50 @@ body {
   flex-wrap: wrap; /* lets schedules stack on narrow screens instead of overflowing */
 }
 
+.faq-item {
+  border-bottom: 1px solid black;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: var(--font-size-body);
+  color: black;
+  padding: calc(var(--space-unit) * 2) 0;
+  text-align: left;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  margin-left: calc(var(--space-unit) * 2);
+  transition: transform 300ms ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px; /* generous cap — see note below */
+}
+
+.faq-answer p {
+  padding-bottom: calc(var(--space-unit) * 2);
+  color: black;
+  font-family: var(--font-mono);
+}
+
 /*# sourceMappingURL=main.css.map */

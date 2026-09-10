@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="site-header">
-  <a href="/" class="logo">
+  <a href="https://macewan.campuslabs.ca/engage/organization/macs" class="logo">
 	<img src="/assets/MaCS_Logo_Classic.svg" alt="MaCS Logo">
   </a>
 	<nav class="site-nav">
@@ -63,7 +63,7 @@
 
   <span class="framed-image-label">LOCATION.IMG</span>
   <div class="framed-image-crop">
-	<img src="/assets/samu_building.jpg" alt="meow" style="object-position: 30% center;">
+	<img src="/assets/samu_building.jpg" alt="meow" style="object-position: 40% center;">
   </div>
 </div>
 
@@ -135,7 +135,7 @@
         
           <span>Pizza & Mixer</span>
         
-          <span>Challenges Revealed</span>
+          <span>Themes Revealed</span>
         
           <span>Hackathon Begins</span>
         
@@ -173,7 +173,7 @@
         
           <span>Doors Open</span>
         
-          <span>Breakfast</span>
+          <span>Breakfast Snacks</span>
         
           <span>Dinner</span>
         
@@ -198,6 +198,8 @@
 	<div class="sched-list">
 	  <div class="sched-times">
         
+          <span>TBD</span>
+        
           <span>12:00 PM</span>
         
           <span>TBD</span>
@@ -208,6 +210,8 @@
         
 	  </div>
 	  <div class="sched-activities">
+        
+          <span>Breakfast Snacks</span>
         
           <span>Submissions due</span>
         
@@ -224,6 +228,21 @@
 
 	  
 	</div>
+</section>
+<section class="content-section content-section--light">
+  <div class="faq-item">
+  <button class="faq-question" type="button">
+    <span>Do I need a team to register?</span>
+    <svg class="faq-icon" viewBox="0 0 24 24" width="16" height="16">
+      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    <p>No, you can register solo and we'll help you find teammates at the event.</p>
+  </div>
+</div>
+
+  <h2 class="section-title">FAQ</h2>
 </section>
 	<script>
 	  function fitBorderToButton(btn) {
@@ -253,6 +272,11 @@
 
 	  fitAllBorderButtons();
 	  window.addEventListener('resize', fitAllBorderButtons);
+	  document.querySelectorAll('.faq-question').forEach(btn => {
+		btn.addEventListener('click', () => {
+		  btn.closest('.faq-item').classList.toggle('open');
+		});
+	  });
 	</script>
 
   </body>
