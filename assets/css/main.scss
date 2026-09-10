@@ -401,8 +401,9 @@ body {
 .faq-list {
   columns: 2; /* CSS multi-column layout, not grid */
   column-gap: calc(var(--space-unit) * 24);
-  margin: calc(var(--space-unit) * 2);
-  margin-bottom: calc(var(--space-unit) * 24);
+  max-width: 2000px; /* adjust — should roughly fit both 800px-max items + your column-gap */
+  padding: 0 calc(var(--space-unit) * 4);
+  margin: 0 auto calc(var(--space-unit) * 24) auto; /* top/right/bottom/left: centers horizontally, keeps your bottom margin */
 }
 .link-highlight {
   color: var(--color-orange);
