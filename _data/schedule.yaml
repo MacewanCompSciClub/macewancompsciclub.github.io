@@ -22,6 +22,8 @@
     - time: "TBD"
       activity: "Breakfast Snacks"
     - time: "TBD"
+      activity: "Lunch"
+    - time: "TBD"
       activity: "Dinner"
     - time: "10:00 PM"
       activity: "Doors Close"
