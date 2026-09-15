@@ -7,10 +7,10 @@
 - question: "SHOULD I ALREADY KNOW HOW TO PROGRAM?"
   answer: "Absolutely not, this event is not just for building but also an excuse to learn!"
 
-- question: "What should I bring?"
+- question: "WHAT SHOULD I BRING?"
   answer: "Your laptop, charger, and any other devices you want to build with."
 
-- question: "What's the team size?"
+- question: "WHAT'S THE TEAM SIZE?"
   answer: "You can have up to five people on your team."
 
 - question: "WHAT'S THE THEME?"
@@ -24,6 +24,3 @@
 
 - question: "CAN I PARTICIPATE ONLINE?"
   answer: "You can! You will also be able to present remotely. You may miss out on the snacks though..."
-
-- question: "ANOTHER QUESTION"
-  answer: "Another answer"
