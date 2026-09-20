@@ -29,7 +29,6 @@
   align-items: center;
   padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 4);
   z-index: 10;
-  background: var(--color-bg);
 }
 
 .site-nav {
@@ -43,6 +42,8 @@ h1 {
 
 body {
   background: var(--color-bg);
+  background-image: linear-gradient(to right, #1E1E1E 2px, transparent 2px), linear-gradient(to bottom, #1E1E1E 2px, transparent 2px);
+  background-size: 60px 60px;
 }
 
 .site-nav a.active::before {
