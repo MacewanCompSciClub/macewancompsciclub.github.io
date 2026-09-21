@@ -30,6 +30,7 @@
   align-items: center;
   padding: calc(var(--space-unit) * 1) calc(var(--space-unit) * 4);
   z-index: 10;
+  background: var(--color-bg);
 }
 
 .site-nav {
@@ -422,6 +423,7 @@ body {
 .contact-block {
   display: flex;
   justify-content: flex-end;
+  padding: 0 calc(var(--space-unit) * 4);
 }
 
 .parallax-line-horizontal {
@@ -454,4 +456,104 @@ body {
   );
   z-index: -1;
   pointer-events: none;
+}
+
+.hamburger {
+  display: none; /* hidden on desktop */
+  width: 60px;
+  height: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white; /* adjust to your header text color */
+}
+.nav-link-bracket {
+  display: none; /* hidden by default (desktop) */
+}
+
+.nav-link-icon {
+  display: none; /* hidden by default (desktop) */
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none; /* hidden until toggled open */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--color-bg);
+    padding: calc(var(--space-unit) * 2);
+    gap: 0;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* text left, bracket+icon right */
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    padding: calc(var(--space-unit) * 2) 0;
+    border-bottom: 1.5px solid white;
+  }
+  .site-nav.open .nav-link {
+    animation: slideInDown 400ms ease forwards;
+  }
+  .nav-link-bracket {
+
+    display: inline; /* shown only on mobile */
+    font-weight: bold;
+    font-size: 14pt;
+  }
+  .nav-link-text {
+    font-size: 14pt;
+    color: #FFFFFF;
+  }
+.nav-link-icon {
+  fill: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+  .nav-link-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* tight spacing between bracket/icon/bracket */
+  }
+  .site-nav.open {
+    display: flex;
+  }
+
+  /* hamburger → X animation when menu is open */
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    width: 22px;
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 22px;
+  }
 }

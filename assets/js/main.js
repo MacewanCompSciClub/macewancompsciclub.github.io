@@ -1,3 +1,14 @@
+function initHamburger() {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.site-nav');
+  if (!hamburger || !nav) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+}
+
 // Parallax line (horizontal)
 function initParallax() {
   const lines = document.querySelectorAll('.parallax-line-horizontal');
@@ -15,5 +26,6 @@ function initParallax() {
 
 // Run everything once the page is ready
 document.addEventListener('DOMContentLoaded', () => {
-  initParallax();
+	initParallax();
+	initHamburger();
 });

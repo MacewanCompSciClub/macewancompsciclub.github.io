@@ -10,9 +10,14 @@
 	<!--img src="{{ '/assets/MaCS_Logo_Classic.svg' | relative_url }}" alt="MaCS Logo"-->
   </a>
 	<nav class="site-nav">
-	  <a href="https://discord.com/invite/dCJrADTAjw" {% if page.url == "/" %} class="active" target = "_blank"{% endif %}>						   Join the Discord</a>
-	  <!--a href="/events.html"  {% if page.url == "/events.html" %}   class="active" {% endif %}> Events</a-->
-	  <!-- a href="/about.html"   {% if page.url == "/about.html" %}     class="active" {% endif %}> About</a-->
-	  <!-- <a href="/contact.html" {% if page.url == "/contact.html" %} class="active" {% endif %}> Contact</a> -->
+	{% include nav_link.html name="Join the Discord" href="https://discord.com/invite/dCJrADTAjw" icon="/assets/icons/discord.svg" %}
+	{% include nav_link.html name="Instagram" href="https://www.instagram.com/macewancs/" icon="/assets/icons/instagram.svg" %}
+	{% include nav_link.html name="SAMU Campus Labs" href="https://samu.campuslabs.ca/engage/organization/macs" icon="/assets/icons/samu.svg" %}
+	{% include nav_link.html name="LinkedIn" href="https://www.linkedin.com/company/macewancsclub" icon="/assets/icons/linkedin.svg" %}
 	</nav>
+  <button class="hamburger" type="button" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
