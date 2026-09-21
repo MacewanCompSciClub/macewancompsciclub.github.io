@@ -74,11 +74,20 @@ title: Main
 </section>
 <section class="content-section content-section--light">
   <h2 class="section-title">FAQ</h2>
-  <div class="faq-list">
-    {% for item in site.data.faq %}
-      {% include faq_item.html question=item.question answer=item.answer %}
-    {% endfor %}
-  </div>
+	<div class="faq-list">
+	  <div class="faq-column">
+		{% assign half = site.data.faq.size | divided_by: 2 | ceil %}
+		{% for item in site.data.faq limit: half %}
+		  {% include faq_item.html question=item.question answer=item.answer %}
+		{% endfor %}
+	  </div>
+	  <div class="faq-column">
+		{% assign half = site.data.faq.size | divided_by: 2 | ceil %}
+		{% for item in site.data.faq offset: half %}
+		  {% include faq_item.html question=item.question answer=item.answer %}
+		{% endfor %}
+	  </div>
+	</div>
 
 <div class="contact-block">
 <p>

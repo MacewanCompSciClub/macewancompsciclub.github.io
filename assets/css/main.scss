@@ -41,6 +41,7 @@
 h1 {
   color: var(--color-text);
 }
+
 body {
   background: var(--color-bg);
   background-image:
@@ -403,11 +404,18 @@ body {
 }
 
 .faq-list {
-  columns: 2; /* CSS multi-column layout, not grid */
-  column-gap: calc(var(--space-unit) * 24);
-  max-width: 2000px; /* adjust — should roughly fit both 800px-max items + your column-gap */
+  display: flex;
+  gap: calc(var(--space-unit) * 24); /* was column-gap, now flex gap */
+  align-items: flex-start; /* stops columns stretching to match each other's height */
+  max-width: 2000px;
   padding: 0 calc(var(--space-unit) * 4);
-  margin: 0 auto calc(var(--space-unit) * 24) auto; /* top/right/bottom/left: centers horizontally, keeps your bottom margin */
+  margin: 0 auto calc(var(--space-unit) * 24) auto;
+}
+
+.faq-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .link-highlight {
   color: var(--color-orange);
@@ -415,8 +423,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .faq-list {
-    columns: 1;
+ .faq-list {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
