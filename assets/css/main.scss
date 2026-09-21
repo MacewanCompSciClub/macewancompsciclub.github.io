@@ -487,7 +487,8 @@ body {
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0
+    padding: 0;
+    background: #0F0F0F;
   }
   .hamburger {
     display: flex;
@@ -500,7 +501,7 @@ body {
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: var(--color-bg);
+    background: #0F0F0F;
     padding: calc(var(--space-unit) * 2);
     gap: 0;
   }
@@ -518,10 +519,10 @@ body {
     animation: slideInDown 400ms ease forwards;
   }
   .nav-link-bracket {
-
     display: inline; /* shown only on mobile */
-    font-weight: bold;
+    font-weight: 300;
     font-size: 14pt;
+    color: #FFFFFF;
   }
   .nav-link-text {
     font-size: 14pt;
