@@ -184,7 +184,7 @@ function setStatus(state, text) {
 
 function connectTo(key) {
   const server = SERVERS[key];
-  const url = `ws://${server.host}:${server.port}${WS_PATH}?token=${encodeURIComponent(server.token)}`;
+  const url = `ws://${server.host}${WS_PATH}?token=${encodeURIComponent(server.token)}`;
 
   logEl.textContent = "";
   targetLabel.textContent = `${server.label} (${server.host}:${server.port})`;
